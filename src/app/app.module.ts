@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PeliculonesComponent } from './peliculones/peliculones.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment.prod';
+import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { PelisService } from 'src/app/pelis.service';

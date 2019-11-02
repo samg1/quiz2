@@ -2,6 +2,7 @@
     height: 300px;
     border: 2px solid red;
     display: flex;
+    background-color: midnightblue;
 
     img{
         height: auto;
@@ -21,4 +22,16 @@
 
 .pipi{
     width:100%;
+}
+
+.hero{
+    text-align: center;
+}
+
+.detalles{
+    display: flex;
+
+    div{
+        padding: 10px;
+    }
 }

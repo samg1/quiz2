@@ -1,8 +1,7 @@
-<div *ngFor="let x of ordenes">
-    <p>{{ x.movie }}</p>
-    <p>{{ x.name }}</p>
-    <p>{{ x.lastname }}</p>
-    <p>{{ x.phone }}</p>
-    <p>{{ x.quantity }}</p>
-
+<div *ngFor="let x of ordenes" class="ok">
+    <p>Movie: {{ x.movie }}</p>
+    <p>Name: {{ x.name }}</p>
+    <p>Lastname: {{ x.lname }}</p>
+    <p>Phone: {{ x.phone }}</p>
+    <p>Seats: {{ x.quantity }}</p>
 </div>

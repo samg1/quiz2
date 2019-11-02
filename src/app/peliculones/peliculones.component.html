@@ -1,15 +1,15 @@
 <section class="hero">
-
+    <h1>Peliculones</h1>
 </section>
 <section>
     Cartelera
 </section>
-<div *ngFor="let pelicula of peliculas; let i = index" >
+<div *ngFor="let pelicula of peliculas; let i = index">
     <div *ngIf="i < 6" class="peliculas">
         <div>
             <img [src]="pelicula.Poster" alt="peliculita" style="height: 100%">
         </div>
-        <div >
+        <div>
             <p> {{ pelicula.Title }} </p>
             <p> Año: {{ pelicula.Year }} </p>
             <p> Rated: {{ pelicula.Rated }} </p>
@@ -19,10 +19,10 @@
     </div>
 </div>
 <section>
-Proximamente 
+    Proximamente
 </section>
-<div *ngFor="let pelicula of peliculas; let i = index" >
-    <div *ngIf="i >= 6"class= "peliculas">
+<div *ngFor="let pelicula of peliculas; let i = index">
+    <div *ngIf="i >= 6" class="peliculas">
         <div>
             <img [src]="pelicula.Poster" alt="peliculita" style="height: 100%">
         </div>
@@ -46,21 +46,23 @@ Proximamente
 
 <div>
     <div *ngFor="let foto of actualpeli2.Images">
-        <img [src]="foto" [alt]="actualpeli"a style="width: 100%;">
+        <img [src]="foto" [alt]="actualpeli" a style="width: 100%;">
     </div>
-    <div *ngFor="let x of actualpeli2.Genre">
-        <p> {{ x }} </p>
+    <div class="detalles">
+        <div *ngFor="let x of actualpeli2.Genre">
+            <p> {{ x }} </p>
+        </div>
+        <div>
+            <p> Director: {{ actualpeli2.Year }} </p>
+            <p> Writer: {{ actualpeli2.Rated }} </p>
+            <p> Actors: {{ actualpeli2.Released }} </p>
+            <p> Plot: {{ actualpeli2.Language }} </p>
+            <p> Runtime: {{ actualpeli2.Runtime }}</p>
+            <p> Country: {{ actualpeli2.Country }} </p>
+            <p> Awards: {{ actualpeli2.Awards }} </p>
+        </div>
     </div>
-    <div>
-        <p> Director: {{ actualpeli2.Year }} </p>
-        <p> Writer: {{ actualpeli2.Rated }} </p>
-        <p> Actors: {{ actualpeli2.Released }} </p>
-        <p> Plot: {{ actualpeli2.Language }} </p>
-        <p>Runtime: {{ actualpeli2.Runtime }}</p>
-        <p> Country: {{ actualpeli2.Country }} </p>
-        <p> Awards: {{ actualpeli2.Awards }} </p>
-    </div>
-    <button *ngIf="actualpeli2.ComingSoon == false" routerLink="/reser" routerLinkActive="active" >
+    <button *ngIf="actualpeli2.ComingSoon == false" routerLink="/reser" routerLinkActive="active">
         Reservar
     </button>
     <div *ngIf="actualpeli2.ComingSoon == true">
