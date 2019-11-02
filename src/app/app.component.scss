@@ -1,0 +1,16 @@
+.bar{
+    display: flex;
+    height: 8vh;
+    border: 1px solid red;
+    align-content: center;
+    align-items: center;
+    width:100%;
+    margin:0;
+    padding:0;
+
+    a{
+        flex:1;
+        text-align: center;
+        
+    }
+}

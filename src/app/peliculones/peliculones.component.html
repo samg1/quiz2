@@ -1,0 +1,70 @@
+<section class="hero">
+
+</section>
+<section>
+    Cartelera
+</section>
+<div *ngFor="let pelicula of peliculas; let i = index" >
+    <div *ngIf="i < 6" class="peliculas">
+        <div>
+            <img [src]="pelicula.Poster" alt="peliculita" style="height: 100%">
+        </div>
+        <div >
+            <p> {{ pelicula.Title }} </p>
+            <p> Año: {{ pelicula.Year }} </p>
+            <p> Rated: {{ pelicula.Rated }} </p>
+            <p> Released: {{ pelicula.Released }} </p>
+            <p> Idioma: {{ pelicula.Language }} </p>
+        </div>
+    </div>
+</div>
+<section>
+Proximamente 
+</section>
+<div *ngFor="let pelicula of peliculas; let i = index" >
+    <div *ngIf="i >= 6"class= "peliculas">
+        <div>
+            <img [src]="pelicula.Poster" alt="peliculita" style="height: 100%">
+        </div>
+        <div>
+            <p> {{ pelicula.Title }} </p>
+            <p> Año: {{ pelicula.Year }} </p>
+            <p> Rated: {{ pelicula.Rated }} </p>
+            <p> Released: {{ pelicula.Released }} </p>
+            <p> Idioma: {{ pelicula.Language }} </p>
+        </div>
+    </div>
+</div>
+<div style=" text-align: center;">
+    <input list="pelis" [(ngModel)]="actualpeli" style="width: 80%;" name="actualpeli" (change)="selected()"
+        value="{{actualpeli2.Title}}" onfocus="this.value=''" ngDefaultControl>
+    <datalist id="pelis">
+        <option *ngFor="let peli of peliculas" [value]="peli.Title"> </option>
+    </datalist>
+    <input style="width:10%" type="submit" (click)="cambiar()">
+</div>
+
+<div>
+    <div *ngFor="let foto of actualpeli2.Images">
+        <img [src]="foto" [alt]="actualpeli"a style="width: 100%;">
+    </div>
+    <div *ngFor="let x of actualpeli2.Genre">
+        <p> {{ x }} </p>
+    </div>
+    <div>
+        <p> Director: {{ actualpeli2.Year }} </p>
+        <p> Writer: {{ actualpeli2.Rated }} </p>
+        <p> Actors: {{ actualpeli2.Released }} </p>
+        <p> Plot: {{ actualpeli2.Language }} </p>
+        <p>Runtime: {{ actualpeli2.Runtime }}</p>
+        <p> Country: {{ actualpeli2.Country }} </p>
+        <p> Awards: {{ actualpeli2.Awards }} </p>
+    </div>
+    <button *ngIf="actualpeli2.ComingSoon == false" routerLink="/reser" routerLinkActive="active" >
+        Reservar
+    </button>
+    <div *ngIf="actualpeli2.ComingSoon == true">
+        <p>Coming soon, release: {{ actualpeli2.Released }}</p>
+    </div>
+
+</div>
